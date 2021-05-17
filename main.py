@@ -14,7 +14,7 @@ cryptocompare_api_key = '00ff6c8217eec5d6894a77d4bc335d5306072e0e22fc1af970bf0f6
 cryptocompare.cryptocompare._set_api_key_parameter(api_key=cryptocompare_api_key)
 
 import telebot
-#telegram_chat_id = '452513294'  # CMS  - '452513294'   # Mae - '1031430125'
+telegram_chat_id = '452513294'  # CMS  - '452513294'   # Mae - '1031430125'
 telegram_token = '1238835452:AAGTATI9bldZfHtD2iMrvHiVztz9DguLHck'  # TamoNaBolsa
 telegram_token = '1853621782:AAEv8V-r8engZScvTQLolfMKOmeJ0DXv5dU'  # CMSCriptoBot
 
@@ -300,6 +300,10 @@ def processar():
             @bot.message_handler(commands=['portfolio'])
             def send_portfolio(message):
                 try:
+                    
+                    if str(telegram_chat_id) != str(message.chat.id):
+                        msg = bot.send_message(chat_id=message.chat.id, text='Não autorizado!', parse_mode="HTML", disable_web_page_preview=False)
+                        return
 
                     msg = bot.send_message(chat_id=message.chat.id, text='Consultando Dados\nAguarde...', parse_mode="HTML", disable_web_page_preview=False)
 
@@ -318,6 +322,10 @@ def processar():
             @bot.message_handler(commands=['saldo'])
             def send_saldo(message):
                 try:
+                    
+                    if str(telegram_chat_id) != str(message.chat.id):
+                        msg = bot.send_message(chat_id=message.chat.id, text='Não autorizado!', parse_mode="HTML", disable_web_page_preview=False)
+                        return
 
                     msg = bot.send_message(chat_id=message.chat.id, text='Consultando Dados\nAguarde...', parse_mode="HTML", disable_web_page_preview=False)
 
