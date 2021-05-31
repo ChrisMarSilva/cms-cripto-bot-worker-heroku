@@ -11,7 +11,7 @@ warnings.filterwarnings('ignore')
 
 import cryptocompare
 cryptocompare_api_key = '00ff6c8217eec5d6894a77d4bc335d5306072e0e22fc1af970bf0f68f00eb6bf'
-cryptocompare.cryptocompare._set_api_key_parameter(api_key=cryptocompare_api_key)
+#cryptocompare.cryptocompare._set_api_key_parameter(api_key=cryptocompare_api_key)
 
 import telebot
 telegram_chat_id = '452513294'  # CMS  - '452513294'   # Mae - '1031430125'
